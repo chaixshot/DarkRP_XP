@@ -6,6 +6,7 @@ Adds an XP ranking system like the one found in GTA:O
 * Saves and loads players XP / rank
 * Add/remove XP from your own script
 * Allows you listen for rank changes to reward players
+* Support [Playerlist](https://darkrpth.tebex.io/package/5219749), [Racing](https://darkrpth.tebex.io/package/5218659)
 
 ##### Increasing XP
 
