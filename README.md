@@ -1,5 +1,5 @@
 # DarkRP_XP
-Adds an XP ranking system like the one found in GTA:O. Work in progress.
+Adds an XP ranking system like the one found in GTA:O
 
 ## Features
 * Scaleform native GTA system
