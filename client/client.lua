@@ -5,18 +5,11 @@ BSServers = Tunnel.GedInthrFaced("DarkRP_XP", "DarkRP_XP")
 
 CreateThread(function()
 	BSServers.playerLoaded()
-	while true do
-		Citizen.Wait(10*60*1000)
-		BSServers.AddXP({500})
-	end
+	-- while true do
+		-- Citizen.Wait(10*60*1000)
+		-- BSServers.AddXP({500})
+	-- end
 end)
-
-RegisterCommand('+DarkRP_XP:showbar', function()
-	TriggerEvent("DarkRP_XP:showbar")
-end, false)
-RegisterCommand('-DarkRP_XP:showbar', function()
-end, false)
-RegisterKeyMapping('+DarkRP_XP:showbar', 'DarkRP_XP:showbar', 'keyboard', "Z")
 
 --===================================================================================
 -- This thread will Enable the player to press Z to show the current XP/Rankbar
@@ -30,7 +23,6 @@ AddEventHandler('DarkRP_XP:showbar', function()
 	-- NOTE ON THE TWO ABOVE: Those are NOT implemented in this script! but just as 'extra info' for a 'complete hud'
 end)
 
-
 --===================================================================================
 -- Export Functions so they can more easily be called from external scripts :)
 -- as suggested by one of the Elements (oganesson):
@@ -40,12 +32,12 @@ exports('SetInitialXPLevels', function(EXCurrentXP, EXShowRankBar, EXShowRankBar
 	SetInitialXPLevels(EXCurrentXP, EXShowRankBar, EXShowRankBarAnimating)
 end)
 
-exports('AddPlayerXP', function(EXXPAmount)
-	AddPlayerXP(EXXPAmount)
+exports('AddPlayerXPToServer', function(EXXPAmount)
+	BSServers.AddXP({math.floor(EXXPAmount)})
 end)
 
-exports('RemovePlayerXP', function(EXXPAmount)
-	RemovePlayerXP(EXXPAmount)
+exports('RemovePlayerXPToServer', function(EXXPAmount)
+	BSServers.RemoveXP({math.floor(EXXPAmount)})
 end)
 
 exports('GetCurrentPlayerXP', function()
@@ -53,7 +45,7 @@ exports('GetCurrentPlayerXP', function()
 end)
 
 exports('GetLevelFromXP', function(EXXPAmount)
-	return GetLevelFromXP(EXXPAmount)
+	return GetLevelFromXP(math.floor(EXXPAmount))
 end)
 
 exports('GetCurrentPlayerLevel', function()
@@ -61,10 +53,10 @@ exports('GetCurrentPlayerLevel', function()
 end)
 
 exports('GetXPFloorForLevel', function(IntLvl)
-	return tonumber(GetXPFloorForLevel(IntLvl))
+	return tonumber(GetXPFloorForLevel(math.floor(IntLvl)))
 end)
 exports('GetXPCeilingForLevel', function(IntLvl)
-	return tonumber(GetXPCeilingForLevel(IntLvl))
+	return tonumber(GetXPCeilingForLevel(math.floor(IntLvl)))
 end)
 
 --===================================================================================
