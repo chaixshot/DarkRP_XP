@@ -60,7 +60,7 @@ exports["DarkRP_XP"]:GetXPCeilingForLevel(Level --[[ integer ]])
 
 ## Event (Client Slide)
 
--- Press Z to show the current XP/Rankbar
+Press Z to show the current XP/Rankbar
 ```lua
 TriggerEvent("DarkRP_XP:showbar")
 ```
