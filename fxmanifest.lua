@@ -3,6 +3,8 @@ lua54 'yes'
 game 'gta5'
 -- use_fxv2_oal 'yes'
 
+version '2.0'
+
 server_scripts {
 	'@oxmysql/lib/MySQL.lua',
 	'server/2way.lua',
