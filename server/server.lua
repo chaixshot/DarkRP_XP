@@ -102,3 +102,13 @@ CreateThread(function()
 		end
 	end)
 end)
+
+MySQL.ready(function()
+	MySQL.Sync.execute([[
+		CREATE TABLE IF NOT EXISTS `users_xp` (
+		  `identifier` varchar(50) DEFAULT NULL,
+		  `xp` int(255) DEFAULT 0,
+		  KEY `identifier` (`identifier`)
+		) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+	]])
+end)

@@ -153,6 +153,7 @@ function AddPlayerXP(XPAmount)
 	-- This section detects if there is a difference in level due to player gaining XP
 	if NewLevel > CurrentLevel then
 		LevelDifference = NewLevel - CurrentLevel
+		TriggerEvent("DarkRP_XP:rankUp", NewLevel, CurrentLevel)
 	end
 	
 	if LevelDifference > 0 then
@@ -225,6 +226,7 @@ function RemovePlayerXP(XPAmount)
 	-- This section detects if there is a difference in level due to player losing XP
 	if NewLevel < CurrentLevel then
 		LevelDifference = math.abs(NewLevel - CurrentLevel)	-- Math(ematical) function gets the absolute difference between the Current and new level (counting the 'level loss')
+		TriggerEvent("DarkRP_XP:rankDown", NewLevel, CurrentLevel)
 	end
 	
 	if LevelDifference > 0 then
