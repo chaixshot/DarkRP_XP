@@ -65,3 +65,19 @@ Press Z to show the current XP/Rankbar
 ```lua
 TriggerEvent("DarkRP_XP:showbar")
 ```
+
+## Client Event Listeners
+Listen for rank change events. These can be used to reward / punish the player for changing rank.
+
+Listen for rank-up event
+```lua
+AddEventHandler("DarkRP_XP:rankUp", function(newRank --[[ integer ]], previousRank --[[ integer ]])
+    -- Do something when player ranks up
+end)
+```
+Listen for rank-down event
+```lua
+AddEventHandler("DarkRP_XP:rankDown", function(newRank --[[ integer ]], previousRank --[[ integer ]])
+    -- Do something when player drops a rank
+end)
+```
