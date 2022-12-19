@@ -1,12 +1,10 @@
 Config = {}
 
 if not IsDuplicityVersion() then
-	RegisterCommand('+DarkRP_XP:showbar', function()
+	RegisterCommand('DarkRP_XP:showbar', function()
 		TriggerEvent("DarkRP_XP:showbar")
 	end, false)
-	RegisterCommand('-DarkRP_XP:showbar', function()
-	end, false)
-	RegisterKeyMapping('+DarkRP_XP:showbar', 'DarkRP_XP:showbar', 'keyboard', 'Z')
+	RegisterKeyMapping('DarkRP_XP:showbar', 'DarkRP_XP:showbar', 'keyboard', 'Z')
 end
 
 --=========================================================================================
